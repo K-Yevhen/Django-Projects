@@ -44,6 +44,8 @@ class Dev(Configuration):
         "crispy_forms",
         "crispy_bootstrap5",
         "movies",
+        "rest_framework",
+        "rest_framework.authtoken",
     ]
 
     CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
