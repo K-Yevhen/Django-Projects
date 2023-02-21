@@ -43,6 +43,8 @@ class Dev(Configuration):
         "django.contrib.staticfiles",
         "crispy_forms",
         "crispy_bootstrap5",
+        "django_celery_results",
+        "django_celery_beat",
         "movies",
         "rest_framework",
         "rest_framework.authtoken",
@@ -182,3 +184,5 @@ class Dev(Configuration):
         "PAGE_SIZE": 100,
     }
 
+    CELERY_RESULT_BACKEND = "django-db"
+    CELERY_BROKER_URL = "redis://localhost:6379/0"
