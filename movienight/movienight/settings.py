@@ -163,7 +163,7 @@ class Dev(Configuration):
         },
     }
 
-    OMDB_KEY = values.Value()
+    OMDB_KEY = values.Value('9ce49ecc')
 
     SIMPLE_JWT = {
         "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
