@@ -1,0 +1,91 @@
+<!-- weather_app/templates/weather_app/weather.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 20px;
+            padding-right: 20px;
+        }
+
+        .weather-container {
+            text-align: right;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Initial opacity */
+            transform: translateY(20px); /* Initial position */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .weather-container.show {
+            opacity: 1; /* Fade in */
+            transform: translateY(0); /* Slide up */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Weather in {{ city }}</h1>
+        <p>Temperature: {{ temperature }} °C</p>
+        <p>Description: {{ description }}</p>
+        <form action="{% url 'weather' %}" method="get">
+            <label for="city">Enter city:</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Get Weather</button>
+        </form>
+    </div>
+
+    <script>
+        // Add a script to toggle the 'show' class after a delay
+        document.addEventListener('DOMContentLoaded', function() {
+            var weatherContainer = document.querySelector('.weather-container');
+            setTimeout(function() {
+                weatherContainer.classList.add('show');
+            }, 500); // Adjust the delay as needed
+        });
+    </script>
+</body>
+</html>
