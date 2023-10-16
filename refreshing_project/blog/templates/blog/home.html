@@ -1,29 +1,10 @@
 <!-- blog/templates/blog/home.html -->
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-    <style>
-        /* Additional styles to make images less visible */
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 20px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            opacity: 0.7; /* Adjust the opacity as needed */
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        img:hover {
-            opacity: 1;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <!-- Additional head content -->
 </head>
 <body>
     <h1>Welcome to our Blog</h1>
@@ -37,6 +18,7 @@
             <input type="text" id="city" name="city" required>
             <button type="submit">Get Weather</button>
         </form>
+          <script src="{% static 'script.js' %}"></script>
     </div>
     {% if posts %}
         <ul>
