@@ -24,7 +24,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('weather/', include('weather_app.urls')),
-    path('', include('blog.urls'))
+    path('', include('blog.urls')),
 ]
 
 if settings.DEBUG:

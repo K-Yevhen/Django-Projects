@@ -30,3 +30,4 @@ function updateWeather(data) {
     temperatureSpan.textContent = temperature;
     descriptionSpan.textContent = description;
 }
+
